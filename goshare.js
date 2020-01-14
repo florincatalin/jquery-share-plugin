@@ -1,7 +1,8 @@
 /*!
- * jQuery goshare v1.0
- * 
- * Copyright (c) 2015 Omar Nazzal */
+ * jQuery goshare v1.1
+ * Copyright (c) 2015 Omar Nazzal 
+ * modified by Florin Catalin to appear in correct position on scrolled pages, for use with Typesetter CMS
+ */
 (function ($) {
 
     $.fn.goshare = function () {
@@ -57,6 +58,9 @@
                 var e = window.event;
                 var posX = e.clientX;
                 var posY = e.clientY;
+                //correct position in scrolled page
+                posX = posX + document.documentElement.scrollLeft;
+                posY = posY + document.documentElement.scrollTop;
                 posX = posX + 10;
                 posY = posY + 10;
                 if (selection == "") { HideGoShar(); }
